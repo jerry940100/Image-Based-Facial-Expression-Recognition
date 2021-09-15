@@ -17,14 +17,14 @@ class SE_block(nn.Module):
         return out
 #把SE_block加進去
 class ViT_SE(nn.Module):
-    def __init__(self):
+    def __init__(self,labels):
         super().__init__()
         self.ViT_Transformer=ViTModel.from_pretrained('google/vit-base-patch16-224-in21k')
         self.SE_Block=SE_block()
-        self.linear=nn.Linear(768,7)
+        self.linear=nn.Linear(768,labels)
     def forward(self,x):
         out=self.ViT_Transformer(x)
         out=out.pooler_output#[Batch_size,768]
         Excitation_out=self.SE_Block(out)
         Final_out=self.linear1(Excitation_out)
-        return Final_out
+        return Final_out #[Batch_size,labels]
