@@ -28,13 +28,20 @@
 * ### Difference of Embeddings
     >This model is going to use difference of embeddings (between Neutral and target expressions) and target expressions embeddings to learn the expression classification.
     #### Model structures
-    ![](https://i.imgur.com/B3yKcqv.png)
-    ##### **Input shape:[Batch_size,2,3,224,224]**
-        You have to input 2 images(Neutal and target expressions image)
-        into the model at the same time.
-    
+    ![](https://i.imgur.com/Myg15jQ.jpg)
 
+##### **Input shape:[Batch_size, 2, C<sub>in</sub>, Height, Width]**
+        You have to input 2 images(Neutral and target expressions image)
+        into the model at the same time.
+The Feature Extractor is based on MobileNetV3 large and pretrained on ImageNet dataset. You can refer the source code [here](https://github.com/jerry940100/Facial-Expression-Recognition/blob/dbd74ea4cfee0867673306b87f6ec8e5d4563a57/Difference_of_Embeddings/Difference_of_Embeddings.py).
     
+*  ### Disentangled Difference of Embeddings 
+    >This model is trained in 2 steps  
+    >1. Train **Emotion Encoder** by using concatenation of  Identity embedding and Emotion embedding to classify the expressions.*(The [pretrained Identity Encoder](https://github.com/cydonia999/VGGFace2-pytorch.git) is based on ResNet50 trained on MS1M and fine-tuned on VGGFace2)*  
+    >2. Use Pretrained Emotion Encoder to infer the embeddings of **Neutral image** and **Target expression image**, and then concatenate the difference of embeddings and target expression embedding to infer the class of target expression image.
+    #### Model structures
+    ![](https://i.imgur.com/QEH7al2.png)
+
 
 
 Let's try it out!
