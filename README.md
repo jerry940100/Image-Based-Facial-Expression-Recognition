@@ -17,7 +17,8 @@
     > [Learning Vision Transformer with Squeeze and Excitation for Facial Expression Recognition](https://arxiv.org/abs/2107.03107v3)  
 作者提出Vison transformer可以學到local feature，於是作者決定加入SE block學習global attention relation，來重新調整不同local feature之間的關係。
     #### Model structures
-    <img src=https://i.imgur.com/HzOxfgd.png alt="drawing" style="width:200px;vertical-align:middle;"/><br>
+    <img src=https://i.imgur.com/HzOxfgd.png alt="drawing" style="width:300px;vertical-align:middle;"/><br>
+    ##### **Input shape:[Batch_size, 3, 224, 224]**
     #### Install Transformer
     ```
     pip install transformers
