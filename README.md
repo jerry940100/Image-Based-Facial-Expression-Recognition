@@ -10,12 +10,12 @@
     -  ViT_SE
     -  Difference of Embeddings
     -  Disentangled Difference of Embeddings
-* ### Experimental result
+* ### Experimental results
 
 ## :memo: Experimental model introduction
 * ### ViT_SE
     > [Learning Vision Transformer with Squeeze and Excitation for Facial Expression Recognition](https://arxiv.org/abs/2107.03107v3)  
-作者提出Vison transformer可以學到local feature，於是作者決定加入SE block學習global attention relation，來重新調整不同local feature之間的關係。
+作者提出Vison transformer會逐漸從global attention轉變為local attention，於是作者決定加入SE block來以重新調整local attention features之間的關聯性。
     #### Model structures
     <img src=https://i.imgur.com/HzOxfgd.png alt="drawing" style="width:300px;vertical-align:middle;"/><br>
     ##### **Input shape:[Batch_size, 3, 224, 224]**
@@ -55,4 +55,6 @@
     >This model is trained in 2 steps  
     >1. Train **[Pretrained_Emotion_Encoder](https://github.com/jerry940100/Facial-Expression-Recognition/blob/b1207c23c68fa3fb69e2b7f94ce6241d330b04b3/Disentangled_Difference_of_Embeddings/Pretrained_Emotion_Encoder.py)** by using concatenation of  Identity embedding and Emotion embedding to classify the expressions.*(The [pretrained_Identity_Encoder](https://github.com/cydonia999/VGGFace2-pytorch.git) is based on ResNet50 trained on MS1M and fine-tuned on VGGFace2)*  
     >2. Use Pretrained Emotion Encoder to infer the embeddings of **Neutral image** and **Target expression image**, and then concatenate the difference of embeddings and target expression embedding to infer the class of target expression image.
+
+## :memo: Experimental results
 
