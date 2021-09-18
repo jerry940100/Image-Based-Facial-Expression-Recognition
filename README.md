@@ -96,17 +96,89 @@
 
 
 
-*    ### Expereimental Results of AffectNet small
-|     Model     |                ViT_SE                |       Different_of_Embeddings        | Disentangled_Difference_of_Embeddings |
-|:-------------:|:------------------------------------:|:------------------------------------:|:-------------------------------------:|
-| Test Accuracy |                 34.7                 |                 33.6                 |     <font color=red>38.04</font>      |
-|    Record     | ![](https://i.imgur.com/1S4egke.png) | ![](https://i.imgur.com/bLubcr7.png) |   ![](https://i.imgur.com/bfwrIYe.png)|
+*    ### Experimental Results of AffectNet small
+        >The experimental results demonstrate that the **Disentangled_Difference_of_Embeddings improve the accuracy on AffectNet small** by using the Pretrained Emotion Encoder to **only extract the emotion features and ignore the difference identities problems** in AffectNet.
+        * Experimental Settings
+			| Hyper parameters |     Value     |
+			|:---------------- |:-------------:|
+			| Training data    |     [28762 ](#Training-and-Testing-data)|
+			| Testing data     |     4000      |
+			| Batchsize        |      32       |
+			| Epochs           |      30       |
+			| Optimizer        |     Adam      |
+			| Loss function    | Cross Entropy |
+            
+<style type="text/css">
+	table div{
+		width:250px;
+		overflow:hidden;
+		/*上面一行代码隐藏溢出内容*/
+    }
+</style>
+<table>
+  <tr>
+    <td align="center">Model</td>
+    <td align="center"><div>ViT_SE</div></td>
+    <td align="center" ><div>Difference_of_Embeddings</div></td>
+    <td align="center" ><div>Disentangled _Difference_of_Embeddings</div></td>
+  </tr>
+  <tr>
+    <td align="center">Test Accuracy</td>
+    <td align="center" >34.7%</td>
+    <td align="center">33.6%</td>
+    <td align="center" ><font color=red>38.04%</font></td>
+  </tr>
+  <tr>
+    <td align="center">Log</td>
+    <td align="center"><img src=https://i.imgur.com/pMKQqz0.png
+ alt="drawing" style="width:250px;vertical-align:middle;"/></td>
+    <td align="center"><img src=https://i.imgur.com/bLubcr7.png alt="drawing" style="width:250px;vertical-align:middle;"/></td>
+    <td align="center"><img src=https://i.imgur.com/bfwrIYe.png alt="drawing" style="width:250px;vertical-align:middle;"/></td>
+  </tr>
+</table>
 
 		
 
 *    ### Expereimental Results of CTBC Dataset
+		| Hyper parameters |     Value     |
+		|:---------------- |:-------------:|
+		| Batchsize        |      32       |
+		| Epochs           |      30       |
+		| Optimizer        |     Adam      |
+		| Loss function    | Cross Entropy |
+		| Validation method| 10 folds validation|
+        
+        ![](https://i.imgur.com/lhv1s9W.png)
+        
+<style type="text/css">
+	table div{
+		width:400px;
+		overflow:hidden;
+		/*上面一行代码隐藏溢出内容*/
+    }
+</style>
+<table>
+  <tr>
+    <td align="center">Model</td>
+    <td align="center"><div>ViT_SE</div></td>
+    <td align="center" ><div>Difference_of_Embeddings</div></td>
+  </tr>
+  <tr>
+    <td align="center">Test Accuracy</td>
+    <td align="center" >34.7%</td>
+    <td align="center">33.6%</td>
+  </tr>
+  <tr>
+    <td align="center">Log</td>
+    <td align="center"><img src=https://i.imgur.com/GhnmRsE.png
+ alt="drawing" style="width:400px;vertical-align:middle;"/></td>
+    <td align="center"><img src=https://i.imgur.com/bLubcr7.png alt="drawing" style="width:250px;vertical-align:middle;"/></td>
+  </tr>
+</table>
+![](https://i.imgur.com/GhnmRsE.png)
 
-*    ### Ablation Study of [Difference of Embeddings](#Difference-of-Embeddings) Model
+*    ### Ablation Study of [Difference of Embeddings](#Difference-of-Embeddings) 
+
     
     
  
