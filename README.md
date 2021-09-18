@@ -108,34 +108,10 @@
 			| Optimizer        |     Adam      |
 			| Loss function    | Cross Entropy |
             
-<style type="text/css">
-	table div{
-		width:250px;
-		overflow:hidden;
-		/*上面一行代码隐藏溢出内容*/
-    }
-</style>
-<table>
-  <tr>
-    <td align="center">Model</td>
-    <td align="center"><div>ViT_SE</div></td>
-    <td align="center" ><div>Difference_of_Embeddings</div></td>
-    <td align="center" ><div>Disentangled _Difference_of_Embeddings</div></td>
-  </tr>
-  <tr>
-    <td align="center">Test Accuracy</td>
-    <td align="center" >34.7%</td>
-    <td align="center">33.6%</td>
-    <td align="center" ><font color=red>38.04%</font></td>
-  </tr>
-  <tr>
-    <td align="center">Log</td>
-    <td align="center"><img src=https://i.imgur.com/pMKQqz0.png
- alt="drawing" style="width:250px;vertical-align:middle;"/></td>
-    <td align="center"><img src=https://i.imgur.com/bLubcr7.png alt="drawing" style="width:250px;vertical-align:middle;"/></td>
-    <td align="center"><img src=https://i.imgur.com/bfwrIYe.png alt="drawing" style="width:250px;vertical-align:middle;"/></td>
-  </tr>
-</table>
+            ![Comparison table of AffectNet small](https://i.imgur.com/k75r7XT.png)
+
+
+
 
 		
 
@@ -149,33 +125,9 @@
 		| Validation method| 10 folds validation|
         
         ![](https://i.imgur.com/lhv1s9W.png)
-        
-<style type="text/css">
-	table div{
-		width:400px;
-		overflow:hidden;
-		/*上面一行代码隐藏溢出内容*/
-    }
-</style>
-<table>
-  <tr>
-    <td align="center">Model</td>
-    <td align="center"><div>ViT_SE</div></td>
-    <td align="center" ><div>Difference_of_Embeddings</div></td>
-  </tr>
-  <tr>
-    <td align="center">Test Accuracy</td>
-    <td align="center" >34.7%</td>
-    <td align="center">33.6%</td>
-  </tr>
-  <tr>
-    <td align="center">Log</td>
-    <td align="center"><img src=https://i.imgur.com/GhnmRsE.png
- alt="drawing" style="width:400px;vertical-align:middle;"/></td>
-    <td align="center"><img src=https://i.imgur.com/bLubcr7.png alt="drawing" style="width:250px;vertical-align:middle;"/></td>
-  </tr>
-</table>
-![](https://i.imgur.com/GhnmRsE.png)
+        ![](https://i.imgur.com/G1JBsZ9.png)
+
+    
 
 *    ### Ablation Study of [Difference of Embeddings](#Difference-of-Embeddings) 
 
