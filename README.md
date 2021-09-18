@@ -85,7 +85,7 @@
     | Testing data  | 500  |  500    |500    |   500    |
     
     #### 2. CTBC
-    > CTBC is an annotated dataset consisting of 7 labels and 10 subjects collected by [MISLAB](http://mislab.cs.nthu.edu.tw/). Due to the RAM problems of Colab, We use part of the front face images(camera2) to train our model in some experiments.
+    > CTBC is an annotated dataset consisting of 7 labels and 10 subjects collected by [MISLAB](http://mislab.cs.nthu.edu.tw/). In the following experiments, we will use **10 folds validation** to validate the dataset. Due to the RAM problems of Colab, We use part of the front face images(camera2) to train our model in some experiments.
     ##### Preprocessing procedures of [Experimental Results of CTBC Dataset](#Expereimental-Results-of-CTBC-Dataset)
     1. Sample 16081 cam2 images
     2. Resize to 224×224
@@ -93,9 +93,7 @@
     ##### Preprocessing procedures of [Ablation Study of *Difference of Embeddings* Model](#Ablation-Study-of-Difference-of-Embeddings-Model)
     1. Sample all of cam2 data 
     2. Resize to 128×128
-
-
-
+    
 *    ### Experimental Results of AffectNet small
         >The experimental results demonstrate that the **Disentangled_Difference_of_Embeddings improve the accuracy on AffectNet small** by using the Pretrained Emotion Encoder to **only extract the emotion features and ignore the difference identities problems** in AffectNet.
         * Experimental Settings
@@ -108,6 +106,7 @@
 			| Optimizer        |     Adam      |
 			| Loss function    | Cross Entropy |
             
+        * Experimental Results
             ![Comparison table of AffectNet small](https://i.imgur.com/k75r7XT.png)
 
 
@@ -116,20 +115,39 @@
 		
 
 *    ### Expereimental Results of CTBC Dataset
-		| Hyper parameters |     Value     |
-		|:---------------- |:-------------:|
-		| Batchsize        |      32       |
-		| Epochs           |      30       |
-		| Optimizer        |     Adam      |
-		| Loss function    | Cross Entropy |
-		| Validation method| 10 folds validation|
-        
-        ![](https://i.imgur.com/lhv1s9W.png)
-        ![](https://i.imgur.com/G1JBsZ9.png)
+        *  Experimental Settings         
+			| Hyper parameters |     Value     |
+			|:---------------- |:-------------:|
+			| Batchsize        |      32       |
+			| Epochs           |      30       |
+			| Optimizer        |     Adam      |
+			| Loss function    | Cross Entropy |
+			| Validation method| 10 folds validation|
+        	
+        	![](https://i.imgur.com/lhv1s9W.png)
+        * Experimental Results
+        	![](https://i.imgur.com/G1JBsZ9.png)
+
+*    ### Ablation Study of [Difference of Embeddings](#Difference-of-Embeddings)
+        >The experimental results demonstrate the **combination of Baseline and difference of embeddings** representing the variation of expressions **improves performance of expression recognition**.  
+        * Experimental Settings
+            | Hyper parameters |     Value     |
+			|:---------------- |:-------------:|
+			| Batchsize        |      32       |
+			| Epochs           |      30       |
+			| Optimizer        |     Adam      |
+			| Loss function    | Cross Entropy |
+			| Validation method| 10 folds validation|
+            
+            ![](https://i.imgur.com/DGXWRhz.png)
+        * Experimental Results
+            ![](https://i.imgur.com/JlOliyJ.png)
+
 
     
 
-*    ### Ablation Study of [Difference of Embeddings](#Difference-of-Embeddings) 
+
+        
 
     
     
